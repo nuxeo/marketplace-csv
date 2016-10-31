@@ -26,7 +26,18 @@
 
     <dependency>
       <groupId>org.nuxeo.csv</groupId>
-      <artifactId>nuxeo-csv</artifactId>
+      <artifactId>nuxeo-csv-core</artifactId>
+      <version>8.4-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>org.nuxeo.csv</groupId>
+      <artifactId>nuxeo-csv-jsf</artifactId>
+      <version>8.4-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>org.nuxeo.csv</groupId>
+      <artifactId>nuxeo-csv-operation</artifactId>
+      <version>8.4-SNAPSHOT</version>
     </dependency>
   </dependencies>
 

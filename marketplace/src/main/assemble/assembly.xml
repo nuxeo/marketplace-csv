@@ -79,16 +79,22 @@
       <patternset refid="csv.versus.cap" />
     </unzip>
 
-    <!-- Generate install.xml file -->
+    <!-- Separate JSF-UI package -->
+    <mkdir dir="${outdir}/marketplace/install/bundles-jsf-ui" />
+    <move todir="${outdir}/marketplace/install/bundles-jsf-ui">
+      <fileset dir="${outdir}/marketplace/install/bundles">
+        <include name="nuxeo-csv-jsf-*.jar" />
+      </fileset>
+    </move>
+
+    <!-- Generate install.xml content -->
     <var name="install.bundles" value="" />
-    <if>
-      <available file="${outdir}/marketplace/install/bundles" />
-      <then>
-        <var name="install.bundles"
-             value="${line.separator}
+    <var name="install.bundles"
+         value="${line.separator}
   &lt;update file=&quot;${package.root}/install/bundles&quot; todir=&quot;${env.bundles}&quot; /&gt;" />
-      </then>
-    </if>
+    <var name="install.bundles"
+         value="${install.bundles}${line.separator}
+  &lt;update file=&quot;${package.root}/install/bundles-jsf-ui&quot; todir=&quot;${env.bundles}&quot; if=&quot;Packages.contains('nuxeo-jsf-ui')&quot; /&gt;" />
 
     <var name="install.libs" value="" />
     <if>
@@ -103,9 +109,9 @@
 
     <var name="install.properties"
          value="${line.separator}
-  &lt;copy file=&quot;${package.root}/install/artifacts-csv.properties&quot;${line.separator}
+  &lt;copy file=&quot;${package.root}/install/artifacts-dam.properties&quot;${line.separator}
     todir=&quot;${env.server.home}/sdk&quot; overwrite=&quot;true&quot; /&gt;${line.separator}
-  &lt;copy file=&quot;${package.root}/install/test-artifacts-csv.properties&quot;${line.separator}
+  &lt;copy file=&quot;${package.root}/install/test-artifacts-dam.properties&quot;${line.separator}
     todir=&quot;${env.server.home}/sdk&quot; overwrite=&quot;true&quot; /&gt;" />
 
     <var name="install.templates" value="" />
@@ -115,7 +121,7 @@
         <var name="install.templates"
              value="${line.separator}
   &lt;copy dir=&quot;${package.root}/install/templates&quot; todir=&quot;${env.templates}&quot; overwrite=&quot;true&quot; /&gt;${line.separator}
-  &lt;config addtemplate=&quot;csv&quot; /&gt;${line.separator}" />
+  &lt;config addtemplate=&quot;dam&quot; /&gt;${line.separator}" />
       </then>
     </if>
 
@@ -128,9 +134,9 @@
       </filterset>
     </copy>
 
-    <zip destfile="${outdir}/${maven.project.artifactId}-${marketplace.csv.version}.zip"
+    <zip destfile="${outdir}/${maven.project.artifactId}-${maven.project.version}.zip"
          basedir="${outdir}/marketplace" />
-    <artifact:attach file="${outdir}/${maven.project.artifactId}-${marketplace.csv.version}.zip" type="zip" />
+    <artifact:attach file="${outdir}/${maven.project.artifactId}-${maven.project.version}.zip" type="zip" />
   </target>
 
 </project>
