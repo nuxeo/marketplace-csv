@@ -27,12 +27,11 @@
 
     <dependency>
       <groupId>org.nuxeo.ecm.csv</groupId>
-      <artifactId>nuxeo-csv-core-dependencies</artifactId>
-      <type>pom</type>
+      <artifactId>nuxeo-csv-jsf</artifactId>
     </dependency>
     <dependency>
       <groupId>org.nuxeo.ecm.csv</groupId>
-      <artifactId>nuxeo-csv-jsf</artifactId>
+      <artifactId>nuxeo-csv-web-ui</artifactId>
     </dependency>
   </dependencies>
 
