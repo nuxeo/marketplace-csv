@@ -14,12 +14,15 @@
   <production-state>production_ready</production-state>
   <supported>true</supported>
   <platforms>
-    <platform>server-@DISTRIB_VERSION@</platform>
-    <platform>server-@DISTRIB_VERSION@-*</platform>
+    <platform>server-8.10</platform>
+    <platform>server-8.10-*</platform>
   </platforms>
   <optional-dependencies>
     <package>nuxeo-jsf-ui</package>
   </optional-dependencies>
+  <dependencies>
+    <package>nuxeo-8.10-HF02:1.0.0</package>
+  </dependencies>
   <license>LGPL</license>
   <license-url>http://www.gnu.org/licenses/lgpl.html</license-url>
   <visibility>PUBLIC</visibility>
