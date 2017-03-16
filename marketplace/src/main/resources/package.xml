@@ -19,6 +19,7 @@
   </platforms>
   <optional-dependencies>
     <package>nuxeo-jsf-ui</package>
+    <package>nuxeo-web-ui</package>
   </optional-dependencies>
   <license>LGPL</license>
   <license-url>http://www.gnu.org/licenses/lgpl.html</license-url>
