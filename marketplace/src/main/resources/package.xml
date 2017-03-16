@@ -4,7 +4,7 @@
   <description>
     <p>The Nuxeo CSV addon adds the ability to bulk-import hundred thousands of documents with their metadata through CSV files to the Nuxeo repository.</p>
   </description>
-  <home-page>http://doc.nuxeo.com/x/O4TZ</home-page>
+  <home-page>https://doc.nuxeo.com/nxdoc/nuxeo-csv</home-page>
   <vendor>Nuxeo</vendor>
   <installer restart="true" />
   <uninstaller restart="true" />
